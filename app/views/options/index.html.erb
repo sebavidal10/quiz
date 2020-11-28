@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<h5><b>Prueba:</b> <%= link_to @question.exam.name, @question.exam %></h5>
+<h5><b>Pregunta:</b> <%= @question.content %></h5>
+<br/>
+<%= link_to 'Nueva Opción', new_exam_question_option_path(@question.exam, @question), :class => "float-right btn btn-primary" %>
+<h3>Opciones</h3>
+
+<table class="table table-bordered">
+  <thead class="bg-dark text-white">
+    <tr>
+      <th>Posición</th>
+      <th>Opción</th>
+      <th>Es Correcta?</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @options.each do |option| %>
+      <tr>
+        <td><%= option.position %></td>
+        <td><%= option.content %></td>
+        <td><%= option.is_correct ? "Si" : "No" %></td>
+        <td class="text-right">
+          <%= link_to 'Editar', edit_exam_question_option_path(@question.exam, @question, option) %> 
+          <%= link_to 'Eliminar', exam_question_option_path(@question.exam, @question, option), :class=>"text-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+

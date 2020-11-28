@@ -1,0 +1,12 @@
+<div class="w-100 py-4 px-2 shadow">
+    <%= exam.name %>
+    <% if user_signed_in? %>
+        <% if current_user.exam_state(exam.id) %>
+            <%= link_to 'Ver Resultados', exam_exam_result_path(exam), :class => "btn btn-success float-right" %>
+        <% else %>
+            <%= link_to 'Ver Prueba', exam_exam_open_path(exam), :class => "btn btn-primary float-right" %>
+        <% end %>
+    <% else %>
+        <i>Debes estar autenticado para rendir los examenes</i>
+    <% end %>
+</div>

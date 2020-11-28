@@ -1,0 +1,8 @@
+<p id="notice"><%= notice %></p>
+
+<h5><b>Prueba:</b> <%= link_to @question.exam.name, @question.exam %></h5>
+<h5><b>Pregunta:</b> <%= @question.content %></h5>
+<br/>
+<h3>Nueva Opción</h3>
+
+<%= render 'form', option: @option %>

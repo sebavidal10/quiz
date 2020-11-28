@@ -1,0 +1,28 @@
+<%= form_with(model: [@exam, question], local: true) do |form| %>
+  <% if question.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(question.errors.count, "error") %> prohibited this question from being saved:</h2>
+
+      <ul>
+        <% question.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :position %>
+    <%= form.number_field :position, :class => "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :content %>
+    <%= form.text_field :content, :class => "form-control" %>
+  </div>
+
+  <div class="form-group text-right mt-4">
+    <%= link_to 'Volver', exam_path(@exam), :class => "float-left btn btn-secondary" %>
+    <%= form.submit 'Guardar', :class => 'btn btn-primary' %>
+  </div>
+<% end %>

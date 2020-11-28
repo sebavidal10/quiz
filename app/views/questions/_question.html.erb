@@ -1,0 +1,9 @@
+<tr>
+    <td><%= question.position %></td>
+    <td><%= question.content %></td>
+    <td><%= link_to "Posibles Respuestas: #{question.options.count}", exam_question_options_path(@exam, question) %></td>
+    <td class="text-right">
+        <%= link_to 'Editar', edit_exam_question_path(@exam, question) %>
+        <%= link_to 'Eliminar', exam_question_path(@exam, question), :class=>"text-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
+    </td>
+</tr>

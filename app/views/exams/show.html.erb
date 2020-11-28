@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h5>
+  <b>Prueba:</b> <%= link_to @exam.name, @exam %> 
+</h5>
+<p><%= link_to 'Edit', edit_exam_path(@exam) %> | <%= link_to 'Back', exams_path %></p>
+<br/>
+<%= link_to 'Nueva Pregunta', new_exam_question_path(@exam), :class => "float-right btn btn-primary" %>
+<h5>Preguntas</h5>
+
+
+<table class="table table-bordered">
+  <thead class="bg-dark text-white">
+    <tr>
+      <th>Posición</th>
+      <th>Pregunta</th>
+      <th>Opciones</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%= render @exam.questions %>
+  </tbody>
+</table>
