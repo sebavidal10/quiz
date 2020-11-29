@@ -1,9 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Nueva Prueba', new_exam_path, :class => "float-right btn btn-primary" %>
-<h3>Pruebas</h3>
 
+<div class="shadow p-3">
+  <%= link_to 'Nuevo Exámen', new_exam_path, :class => "float-right btn btn-primary mb-2" %>
+  <h3>Examenes</h3>
+</div>
+<br/>
 
+<div class="shadow p-3">
 <table class="table table-bordered">
   <thead class="bg-dark text-white">
     <tr>
@@ -20,10 +24,11 @@
         <td><%= exam.questions.count %></td>
         <td class="text-right">
           <%= link_to 'Ver Detalle', exam %>
-          <%= link_to 'Editar', edit_exam_path(exam) %>
-          <%= link_to 'Eliminar', exam, :class=>"text-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_exam_path(exam) %>
+          <%= link_to '<i class="fa fa-trash"></i>'.html_safe, exam, :class=>"text-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
+</div>

@@ -1,12 +1,12 @@
-<div class="w-100 py-4 px-2 shadow">
-    <%= exam.name %>
+<div class="mb-3 p-3 shadow">
     <% if user_signed_in? %>
         <% if current_user.exam_state(exam.id) %>
             <%= link_to 'Ver Resultados', exam_exam_result_path(exam), :class => "btn btn-success float-right" %>
         <% else %>
-            <%= link_to 'Ver Prueba', exam_exam_open_path(exam), :class => "btn btn-primary float-right" %>
+            <%= link_to 'Ver Exámen', exam_exam_open_path(exam), :class => "btn btn-primary float-right" %>
         <% end %>
     <% else %>
-        <i>Debes estar autenticado para rendir los examenes</i>
+        <i class="float-right">Debes estar autenticado para rendir los examenes</i>
     <% end %>
+    <h5 class="mx-2"><i class="fa fa-file-alt" aria-hidden="true"></i> <%= exam.name %></h5>
 </div>

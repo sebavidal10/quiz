@@ -1,27 +1,29 @@
-<nav class="navbar navbar-expand-lg container">
-    <div class="d-flex flex-grow-1">
-        <span class="w-100 d-lg-none d-block"><!-- hidden spacer to center brand on mobile --></span>
-        <%= link_to "Quiz", root_path, :class => "navbar-brand"%>
-        <div class="w-100 text-right">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar7">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+<div class="w-100 bg-dark">
+    <nav class="navbar navbar-expand-lg container">
+        <div class="d-flex flex-grow-1">
+            <span class="w-100 d-lg-none d-block"><!-- hidden spacer to center brand on mobile --></span>
+            <b><%= link_to "Quiz", root_path, :class => "navbar-brand text-white"%></b>
+            <div class="w-100 text-right">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar7">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
         </div>
-    </div>
-    <div class="collapse navbar-collapse flex-grow-1 text-right" id="myNavbar7">
-        <ul class="navbar-nav ml-auto flex-nowrap">
-            <% if user_signed_in? %>
-            <li class="nav-item">
-                <%= link_to "Exams Manager", exams_path, :class => "nav-link"%>
-            </li>
-            <% end %>
-            <li class="nav-item">
+        <div class="collapse navbar-collapse flex-grow-1 text-right" id="myNavbar7">
+            <ul class="navbar-nav ml-auto flex-nowrap">
                 <% if user_signed_in? %>
-                    <%= link_to 'Salir', destroy_user_session_path, method: :delete, :class => "nav-link" %>
-                <% else %>
-                    <%= link_to 'Acceder', new_user_session_path, :class => "nav-link" %>
+                <li class="nav-item">
+                    <%= link_to "Exams Manager", exams_path, :class => "nav-link text-white"%>
+                </li>
                 <% end %>
-            </li>
-        </ul>
-    </div>
-</nav>
+                <li class="nav-item">
+                    <% if user_signed_in? %>
+                        <%= link_to 'Salir', destroy_user_session_path, method: :delete, :class => "nav-link text-white" %>
+                    <% else %>
+                        <%= link_to 'Acceder', new_user_session_path, :class => "nav-link text-white" %>
+                    <% end %>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>

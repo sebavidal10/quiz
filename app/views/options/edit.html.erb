@@ -1,8 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<h5><b>Prueba:</b> <%= link_to @question.exam.name, @question.exam %></h5>
+<h5><i class="fa fa-file-alt" aria-hidden="true"></i> <%= link_to @question.exam.name, @question.exam %></h5>
 <h5><b>Pregunta:</b> <%= @question.content %></h5>
 <br/>
-<h3>Editar Opción</h3>
 
-<%= render 'form', option: @option %>
+<div class="p-3 shadow">
+    <h3>Editar Opción</h3>
+    <%= render 'form', option: @option %>
+</div>

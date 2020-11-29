@@ -1,27 +1,21 @@
-<h5>
-  <b>Resultados Prueba:</b> <%= @exam.name %> 
-</h5>
+<br/>
+<h3 class="shadow p-3"><i class="fa fa-file-alt" aria-hidden="true"></i> Resultados <%= @exam.name %></h3>
 <br/>
 
-    <ol>
-    <% @exam.questions.order("position").each do |question| %>
-        <li class="mb-5">
-            <h5><%= question.content %></h5>
-            <div>
-                <% question.options.order("position").each do |option| %>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="options_question[<%= option.id %>]" id="option_<%= option.id %>" <%= current_user.answer_checked(@exam.id, option.id) ? "checked" : "ss" %> value="true">
-                        <label class="form-check-label" for="option_<%= option.id %>">
-                            <% if option.is_correct %>
-                                <img class="success_answer_icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Check_green_icon.svg/1200px-Check_green_icon.svg.png" />
-                            <% end %>
-                            <%= option.content %>
-                        </label>
-                    </div>
-                <% end %>
-            </div>
-        </li>
-    <% end %>
-    </ol>
+<% @exam.questions.order("position").each do |question| %>
+    <div class="mb-3 p-3 shadow">
+        <h5><%= question.position %>.- <%= question.content %></h5>
+        <div>
+            <% question.options.order("position").each do |option| %>
+                <div class="form-check border my-2 py-2 <%= option.is_correct ? 'alert alert-success' : '' %>">
+                    <input class="form-check-input ml-0" type="radio" name="options_question[<%= option.id %>]" id="option_<%= option.id %>" <%= current_user.answer_checked(@exam.id, option.id) ? "checked" : "" %> value="true">
+                    <label class="form-check-label ml-4" for="option_<%= option.id %>">
+                        <%= option.content %>
+                    </label>
+                </div>
+            <% end %>
+        </div>
+    </div>
+<% end %>
 
 <%= link_to 'Volver', root_path, :class => "float-left btn btn-secondary" %>

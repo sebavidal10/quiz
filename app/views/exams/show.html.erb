@@ -1,25 +1,26 @@
 <p id="notice"><%= notice %></p>
 
-<h5>
-  <b>Prueba:</b> <%= link_to @exam.name, @exam %> 
-</h5>
-<p><%= link_to 'Edit', edit_exam_path(@exam) %> | <%= link_to 'Back', exams_path %></p>
-<br/>
-<%= link_to 'Nueva Pregunta', new_exam_question_path(@exam), :class => "float-right btn btn-primary" %>
-<h5>Preguntas</h5>
+<h3 class="shadow p-3">
+  <i class="fa fa-file-alt" aria-hidden="true"></i> <%= link_to @exam.name, @exam %> 
+  <%= link_to '<i class="fa fa-edit float-right text-warning"></i>'.html_safe, edit_exam_path(@exam) %>
+</h3>
 
+<div class="p-3 shadow">
+  <%= link_to 'Nueva Pregunta', new_exam_question_path(@exam), :class => "float-right btn btn-primary mb-2" %>
+  <h5>Preguntas</h5>
 
-<table class="table table-bordered">
-  <thead class="bg-dark text-white">
-    <tr>
-      <th>Posición</th>
-      <th>Pregunta</th>
-      <th>Opciones</th>
-      <th></th>
-    </tr>
-  </thead>
+  <table class="table table-bordered">
+    <thead class="bg-dark text-white">
+      <tr>
+        <th>Posición</th>
+        <th>Pregunta</th>
+        <th>Opciones</th>
+        <th></th>
+      </tr>
+    </thead>
 
-  <tbody>
-    <%= render @exam.questions %>
-  </tbody>
-</table>
+    <tbody>
+      <%= render @exam.questions %>
+    </tbody>
+  </table>
+</div>
