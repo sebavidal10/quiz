@@ -1,24 +1,11 @@
-# README
+# Quiz
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Aplicación en **Rails 6** que permite crear y mantener pequeñas Quiz con opciones de respuesta cerradas (alternativas).
 
-Things you may want to cover:
+Luego de responder puedes ver tus resultados, donde se nos mostrará la Quiz y sus preguntas, señalando la opción que marcaste y destacando la alternativa correcta.
 
-* Ruby version
+Tiene Devise para la autenticación del usuario, pero no hay mayores permisos aplicados a las funcionalidades. 
 
-* System dependencies
+Tiene **Bootstrap** y **FontAwesome** integrado.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+*11/2020* Con el tiempo la iré mejorando.
