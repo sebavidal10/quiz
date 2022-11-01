@@ -1,11 +1,9 @@
 # Quiz
 
-Aplicación en **Rails 6** que permite crear y mantener pequeñas Quiz con opciones de respuesta cerradas (alternativas).
+Application in Rails 6 that allows to create and maintain small Quizzes with closed answer options (alternatives).
 
-Luego de responder puedes ver tus resultados, donde se nos mostrará la Quiz y sus preguntas, señalando la opción que marcaste y destacando la alternativa correcta.
+After answering you can see your results, where the Quiz and its questions will be shown, indicating the option you marked and highlighting the correct alternative.
 
-Tiene Devise para la autenticación del usuario, pero no hay mayores permisos aplicados a las funcionalidades. 
+It has Devise for user authentication, but there are no higher permissions applied to the features.
 
-Tiene **Bootstrap** y **FontAwesome** integrado.
-
-*11/2020* Con el tiempo la iré mejorando.
+It has Bootstrap and FontAwesome integrated.
